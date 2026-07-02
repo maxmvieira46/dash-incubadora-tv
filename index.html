@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dash TV · Incubadora Acelera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0707; --panel:#141010; --panel2:#1c1614; --orange:#E8631A; --orange-l:#F7913F;
+  --gold:#E0B872; --txt:#F4EEEA; --muted:#9a8d85; --line:#2a211d;
+  --green:#3DAE6B; --green-l:#5BD08A; --yellow:#E8A93A; --red:#D8483F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:Archivo,sans-serif}
+#fit{position:absolute;top:50%;left:50%;transform-origin:center center}
+.stage{width:1920px;height:1080px;background:var(--bg);color:var(--txt);position:relative;
+  background-image:radial-gradient(1400px 700px at 88% -6%, rgba(232,99,26,.20), transparent 60%),
+  radial-gradient(1000px 560px at -8% 112%, rgba(232,99,26,.12), transparent 55%);
+  padding:36px 50px;display:flex;flex-direction:column;gap:16px}
+header{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:14px}
+.logo{font-family:Sora;font-weight:800;font-size:14px;letter-spacing:.30em;color:var(--muted);text-transform:uppercase}
+h1{font-family:Sora;font-weight:800;font-size:42px;line-height:1;letter-spacing:-.02em;margin-top:8px}
+h1 b{color:var(--orange)}
+.hr{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.badge{font-family:Sora;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:9px 18px;border-radius:30px}
+.dt{font-family:Archivo;font-size:17px;color:var(--muted)}.dt b{color:var(--txt);font-weight:700;text-transform:capitalize}
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.kpi{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:15px 22px;position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;right:-26px;top:-26px;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle,rgba(232,99,26,.28),transparent 70%)}
+.kpi .v{font-family:Sora;font-weight:800;font-size:46px;line-height:1}
+.kpi .l{color:var(--muted);font-size:14px;letter-spacing:.03em;margin-top:5px}
+.kpi .ksub{color:var(--gold);font-size:12.5px;margin-top:4px;font-weight:600}
+.kpi.g .v{color:var(--green)}.kpi.o .v{color:var(--orange-l)}.kpi.y .v{color:var(--yellow)}
+/* body */
+.body{flex:1;display:grid;grid-template-rows:0.82fr 1fr;gap:16px;min-height:0}
+.panel{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:16px 22px;display:flex;flex-direction:column;min-height:0}
+.pt{font-family:Sora;font-weight:700;font-size:15px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.pt::before{content:"";width:26px;height:3px;background:var(--orange);border-radius:2px}
+.pt.gr::before{background:var(--green)}
+.pt small{margin-left:auto;color:var(--orange-l);font-family:Sora;font-weight:700;letter-spacing:.02em;text-transform:none;font-size:14px}
+.pt.gr small{color:var(--green-l)}
+/* funnel */
+.funnel{display:flex;align-items:flex-end;gap:0;flex:1;padding:4px 0 2px}
+.fstep{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
+.fbar{width:84%;border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#1a1210}
+.fbar .fn{font-family:Sora;font-weight:800;font-size:46px;line-height:1}
+.fbar .fl{font-size:14px;font-weight:700;margin-top:2px;opacity:.9}
+.fconv{position:absolute;right:-30px;bottom:38%;z-index:5;display:flex;flex-direction:column;align-items:center;
+  background:#241a15;border:1.5px solid var(--orange);border-radius:12px;padding:6px 12px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.fconv .pc{font-family:Sora;font-weight:800;font-size:26px;color:#fff;line-height:1}
+.fconv .pl{font-size:11.5px;color:var(--gold);letter-spacing:.06em;font-weight:700;margin-top:2px}
+.cols3{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:16px;min-height:0}
+/* por classe (merge ativos+faturamento) */
+.clsrows{display:flex;flex-direction:column;gap:18px;flex:1;justify-content:center}
+.clsrow{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:12px}
+.clsh{font-family:Sora;font-weight:700;font-size:18px;line-height:1.1}
+.clsh span{display:block;font-family:Archivo;font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px}
+.clsh span b{color:var(--txt);font-weight:700}
+.clstrack{height:30px;background:#0e0a09;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.clsfill{height:100%;border-radius:7px 0 0 7px}
+.clsval{font-family:Sora;font-weight:800;font-size:18px;text-align:right;white-space:nowrap}
+.clsval small{display:block;font-family:Archivo;font-weight:600;font-size:11px;color:var(--gold);margin-top:1px}
+.clsfoot{font-size:12.5px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}
+.clsfoot b{color:var(--txt)}
+/* top parceiros (compacto) */
+.tp{display:flex;flex-direction:column;gap:8px;flex:1;justify-content:center}
+.tprow{display:grid;grid-template-columns:116px 1fr 78px;align-items:center;gap:10px}
+.tpnm{font-size:12.5px;line-height:1.12}.tpnm b{font-family:Sora;font-weight:800;font-size:14px;color:var(--orange-l)}
+.tpnm.gr b{color:var(--green-l)}
+.tpnm span{display:block;color:var(--muted);font-size:11px}
+.tptrack{height:22px;border-radius:6px;overflow:hidden;display:flex;background:#0e0a09;border:1px solid var(--line)}
+.tpwrap{display:flex;height:100%}
+.tpnova{height:100%;background:linear-gradient(90deg,#2E7D46,#5BD08A)}
+.tpcust{height:100%;background:linear-gradient(90deg,#E8631A,#F7913F)}
+.tpgold{height:100%;background:linear-gradient(90deg,#C98A1E,#E8A93A)}
+.tpgrey{height:100%;background:linear-gradient(90deg,#3a3330,#5a504a)}
+.tpv{font-family:Sora;font-weight:800;font-size:15px;text-align:right;white-space:nowrap;transition:filter .2s}
+.values-hidden .tpv{filter:blur(9px);user-select:none}
+.vtoggle{font-family:Archivo;font-size:13px;font-weight:600;color:var(--gold);background:#241a15;border:1px solid var(--line);border-radius:30px;padding:7px 16px;cursor:pointer;letter-spacing:.04em}
+.vtoggle:hover{border-color:var(--orange);color:var(--orange-l)}
+.vtoggle::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:7px;vertical-align:1px}
+.stage:not(.values-hidden) .vtoggle::before{background:var(--gold)}
+.tpfoot{font-size:12px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line);line-height:1.5}
+.tpfoot b{color:var(--gold);font-weight:700}.tpfoot .rd{color:var(--txt);font-weight:600}
+.tplegend{display:flex;gap:14px;font-size:11.5px;color:var(--muted);margin-top:7px;align-items:center;flex-wrap:wrap}
+.tplegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+/* footer */
+.foot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fcard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:10px 18px}
+.fcard .fv{font-family:Sora;font-weight:800;font-size:26px}
+.fcard .fll{font-size:12.5px;color:var(--muted);margin-top:1px}
+.fcard .fsub{font-size:12.5px;color:var(--gold);font-weight:600;margin-top:3px}
+</style>
+</head>
+<body>
+<div id="fit"><div class="stage">
+  <header>
+    <div>
+      <div class="logo">&#9679;&#9679;&#9679; Incubadora &middot; Acelera AG TaxTech &middot; Gest&atilde;o &agrave; Vista</div>
+      <h1>Dash <b>TV</b> - Painel Incubadora Acelera &middot; 2026</h1>
+    </div>
+    <div class="hr">
+      <div class="badge">Leitura Executiva &middot; 2026</div>
+      <button id="blurToggle" class="vtoggle">Mostrar valores</button>
+      <div class="dt" id="dt"></div>
+    </div>
+  </header>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">91</div><div class="l">Parceiros no programa</div><div class="ksub">Mensura&ccedil;&atilde;o: ingressos set/25 &rarr; jun/26</div></div>
+    <div class="kpi g"><div class="v">48</div><div class="l">Ativos no momento</div><div class="ksub">C1 20 &middot; C2 17 &middot; C3 11</div></div>
+    <div class="kpi"><div class="v">16</div><div class="l">Formados</div><div class="ksub">42,1% dos eleg&iacute;veis (&ge;90d)</div></div>
+    <div class="kpi y"><div class="v">27</div><div class="l">Desincubados</div><div class="ksub">churn 36% do total mensurado</div></div>
+    <div class="kpi o"><div class="v">R$ 8,61<span style="font-size:24px"> mi</span></div><div class="l">Faturado AG (FAT)</div><div class="ksub">312 NFs &middot; take 16,0%</div></div>
+  </div>
+
+  <div class="body">
+    <!-- FUNIL -->
+    <div class="panel">
+      <div class="pt">Funil de participantes &middot; convers&atilde;o por classe <small>do ingresso na C1 &agrave; gradua&ccedil;&atilde;o &mdash; todo o programa</small></div>
+      <div class="funnel">
+        <div class="fstep">
+          <div class="fbar" style="height:100%;background:linear-gradient(160deg,#F7913F,#E8631A)"><div class="fn">91</div><div class="fl">Entraram (C1)</div></div>
+          <div class="fconv"><div class="pc">60%</div><div class="pl">C1 &rarr; C2</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fbar" style="height:80%;background:linear-gradient(160deg,#ECA24A,#E08526)"><div class="fn">55</div><div class="fl">Chegaram &agrave; C2</div></div>
+          <div class="fconv"><div class="pc">49%</div><div class="pl">C2 &rarr; C3</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fbar" style="height:60%;background:linear-gradient(160deg,#E8A93A,#C98A1E)"><div class="fn">27</div><div class="fl">Chegaram &agrave; C3</div></div>
+          <div class="fconv"><div class="pc">59%</div><div class="pl">C3 &rarr; Grad</div></div>
+        </div>
+        <div class="fstep">
+          <div class="fbar" style="height:48%;background:linear-gradient(160deg,#3DAE6B,#2E7D46)"><div class="fn">16</div><div class="fl">Graduaram</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols3">
+      <!-- POR CLASSE: ativos + faturamento (merge) -->
+      <div class="panel">
+        <div class="pt">Por classe &middot; ativos &amp; faturamento</div>
+        <div class="clsrows">
+          <div class="clsrow"><div class="clsh">Classe 1<span><b>20</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:40%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 2,21 mi</div></div>
+          <div class="clsrow"><div class="clsh">Classe 2<span><b>17</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:9%;background:linear-gradient(90deg,#E08526,#ECA24A)"></div></div><div class="clsval">R$ 0,51 mi</div></div>
+          <div class="clsrow"><div class="clsh">Classe 3<span><b>11</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:100%;background:linear-gradient(90deg,#2E7D46,#3DAE6B)"></div></div><div class="clsval">R$ 5,58 mi</div></div>
+        </div>
+        <div class="clsfoot"><b>Base: 48 ativos</b> (parceiros na classe hoje). O faturado de R$ 8,61 mi soma dois status: <b>R$ 7,05 mi (85%)</b> de em andamento + <b>R$ 1,26 mi (15%)</b> de <b>3 conclu&iacute;dos</b> (graduados, todos C3) &mdash; por isso a C3 aparece acima da sua base ativa.</div>
+      </div>
+
+      <!-- NOVAS PRODUÇÕES (PÓS C1) — painel nova produção original (verde) -->
+      <div class="panel">
+        <div class="pt gr">Top parceiros &middot; Novas Produ&ccedil;&otilde;es (P&oacute;s C1) <small>R$ 580 mil</small></div>
+        <div class="tp">
+          <div class="tprow"><div class="tpnm gr"><b>KMS</b><span>Rodrigo O. Dias</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 270 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>VRT</b><span>Vitor R. Teixeira</span></div><div class="tptrack"><div class="tpwrap" style="width:86%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 232 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>WLG</b><span>Wellington Gonzaga</span></div><div class="tptrack"><div class="tpwrap" style="width:15%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 40 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>RCB</b><span>Roberta Bayer</span></div><div class="tptrack"><div class="tpwrap" style="width:9%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 24 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>UMW</b><span>P&aacute;ris K&ouml;mel</span></div><div class="tptrack"><div class="tpwrap" style="width:5%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 13 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>CSD</b><span>Mario Cassio</span></div><div class="tptrack"><div class="tpwrap" style="width:1%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 2 mil</div></div>
+        </div>
+        <div class="tpfoot"><b>Participa&ccedil;&atilde;o por rede:</b> <span class="rd">Alexandre Issa 49%</span> &middot; <span class="rd">Salvador 40%</span> &middot; <span class="rd">BH 7%</span> &middot; <span class="rd">Bras&iacute;lia 4%</span></div>
+      </div>
+
+      <!-- TOP TOTAL — painel original (nova verde + custódia laranja) -->
+      <div class="panel">
+        <div class="pt">Top parceiros &middot; faturado total <small>R$ 8,61 mi</small></div>
+        <div class="tp">
+                    <div class="tprow"><div class="tpnm"><b>RCB</b><span>Roberta Bayer</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:2%"></div><div class="tpcust" style="width:98%"></div></div></div><div class="tpv">R$ 1,55 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>WD</b><span>Walfredo Dantas</span></div><div class="tptrack"><div class="tpwrap" style="width:81%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 1,26 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>WKF</b><span>Paulo Calarge</span></div><div class="tptrack"><div class="tpwrap" style="width:60%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,92 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>MRF</b><span>Mauricio Rollemberg</span></div><div class="tptrack"><div class="tpwrap" style="width:45%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,69 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>XOJ</b><span>Bas&iacute;lio Leandro</span></div><div class="tptrack"><div class="tpwrap" style="width:39%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,61 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>JOP</b><span>Jos&eacute; E. Oliveira</span></div><div class="tptrack"><div class="tpwrap" style="width:37%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,57 mi</div></div>
+          <div class="tprow"><div class="tpnm"><b>VWH</b><span>Raquel de Almeida</span></div><div class="tptrack"><div class="tpwrap" style="width:36%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,55 mi</div></div>
+        <div class="tplegend"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novos (P&oacute;s C1)</span><span><i style="background:linear-gradient(90deg,#E8631A,#F7913F)"></i>Herdado (cust&oacute;dia)</span><span style="margin-left:auto;color:var(--orange-l);font-weight:700">topo &asymp; 100% herdado</span></div>
+        <div class="tpfoot"><b>Participa&ccedil;&atilde;o por rede:</b> <span class="rd">Bras&iacute;lia 25%</span> &middot; <span class="rd">S&atilde;o Luis 15%</span> &middot; <span class="rd">Curitiba 12%</span> &middot; <span class="rd">RJ 11%</span> &middot; <span class="rd">Recife 9%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="fcard"><div class="fv" style="color:var(--green)">42,1%</div><div class="fll">Forma&ccedil;&atilde;o ajustada (16 de 38 eleg&iacute;veis &ge;90d)</div></div>
+    <div class="fcard"><div class="fv">R$ 28 mil</div><div class="fll">Ticket m&eacute;dio por NF (R$ 8,61 mi &divide; 312 NFs)</div><div class="fsub">C1 R$ 20 mil &middot; C2 R$ 37 mil &middot; C3 R$ 31 mil</div></div>
+    <div class="fcard"><div class="fv" style="color:var(--yellow)">10</div><div class="fll">Repetentes (al&eacute;m da cad&ecirc;ncia)</div><div class="fsub">C1 4 (40%) &middot; C2 5 (50%) &middot; C3 1 (10%)</div></div>
+    <div class="fcard"><div class="fv" style="color:var(--orange-l)">56 dias</div><div class="fll">Ciclo mediano Cria&ccedil;&atilde;o &rarr; Autoriza&ccedil;&atilde;o</div><div class="fsub">C1 56d &middot; C2 68d &middot; C3 51d</div></div>
+  </div>
+  <div style="text-align:center;font-size:12px;color:#9a8b7a;opacity:.78;margin-top:6px;letter-spacing:.3px">Faturamento soma AG + AG TAX &mdash; AG TAX &asymp; 2% em junho; nesta vis&atilde;o os valores n&atilde;o s&atilde;o diferenciados por funil.</div>
+</div></div>
+<script>
+function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
+  document.getElementById('fit').style.transform='translate(-50%,-50%) scale('+s+')';}
+window.addEventListener('resize',fit);fit();
+var d=new Date();var m=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+document.getElementById('dt').innerHTML='Atualizado &middot; <b>'+d.getDate()+' de '+m[d.getMonth()]+' de '+d.getFullYear()+'</b>';
+var _stage=document.querySelector('.stage');
+_stage.classList.add('values-hidden');
+document.getElementById('blurToggle').addEventListener('click',function(){
+  var hidden=_stage.classList.toggle('values-hidden');
+  this.textContent=hidden?'Mostrar valores':'Ocultar valores';
+});
+</script>
+</body>
+</html>
