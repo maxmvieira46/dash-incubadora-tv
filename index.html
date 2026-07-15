@@ -11,6 +11,7 @@
   --bg:#0a0707; --panel:#141010; --panel2:#1c1614; --orange:#E8631A; --orange-l:#F7913F;
   --gold:#E0B872; --txt:#F4EEEA; --muted:#9a8d85; --line:#2a211d;
   --green:#3DAE6B; --green-l:#5BD08A; --yellow:#E8A93A; --red:#D8483F;
+  --blue:#2980B9; --purple:#8E44AD;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:Archivo,sans-serif;
@@ -19,93 +20,103 @@ html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:Arc
 .stage{width:1920px;height:1080px;background:var(--bg);color:var(--txt);position:relative;
   background-image:radial-gradient(1400px 700px at 88% -6%, rgba(232,99,26,.20), transparent 60%),
   radial-gradient(1000px 560px at -8% 112%, rgba(232,99,26,.12), transparent 55%);
-  padding:36px 50px;display:flex;flex-direction:column;gap:16px}
-.stage::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.035;mix-blend-mode:overlay;
-  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  background-size:160px 160px}
-header{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:14px}
-.logo{font-family:Sora;font-weight:800;font-size:14px;letter-spacing:.30em;color:var(--muted);text-transform:uppercase}
-h1{font-family:Sora;font-weight:800;font-size:42px;line-height:1;letter-spacing:-.02em;margin-top:8px}
+  padding:32px 44px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:10px}
+.logo{font-family:Sora;font-weight:800;font-size:13px;letter-spacing:.30em;color:var(--muted);text-transform:uppercase}
+h1{font-family:Sora;font-weight:800;font-size:38px;line-height:1;letter-spacing:-.02em;margin-top:6px}
 h1 b{color:var(--orange)}
-.hr{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.badge{font-family:Sora;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:9px 18px;border-radius:30px}
-.dt{font-family:Archivo;font-size:17px;color:var(--muted)}.dt b{color:var(--txt);font-weight:700;text-transform:capitalize}
-/* KPI strip */
-.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.kpi{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:13px 22px;position:relative;overflow:hidden}
-.kpi::after{content:"";position:absolute;right:-26px;top:-26px;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle,rgba(232,99,26,.28),transparent 70%)}
-.kpi .v{font-family:Sora;font-weight:800;font-size:46px;line-height:1}
-.kpi .l{color:var(--muted);font-size:14px;letter-spacing:.03em;margin-top:5px}
-.kpi .ksub{color:var(--gold);font-size:12.5px;margin-top:4px;font-weight:600}
-.kpi .kcond{color:var(--muted);font-size:10.5px;margin-top:3px;font-weight:500;letter-spacing:.02em;opacity:.85}
+.hr{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.badge{font-family:Sora;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:7px 16px;border-radius:30px}
+.dt{font-family:Archivo;font-size:15px;color:var(--muted)}.dt b{color:var(--txt);font-weight:700;text-transform:capitalize}
+/* KPI strip — 6 cards */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.kpi{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:10px 18px;position:relative;overflow:hidden}
+.kpi::after{content:"";position:absolute;right:-22px;top:-22px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(232,99,26,.25),transparent 70%)}
+.kpi .v{font-family:Sora;font-weight:800;font-size:38px;line-height:1}
+.kpi .l{color:var(--muted);font-size:13px;letter-spacing:.03em;margin-top:3px}
+.kpi .ksub{color:var(--gold);font-size:11.5px;margin-top:3px;font-weight:600}
+.kpi .kcond{color:var(--muted);font-size:10px;margin-top:2px;font-weight:500;letter-spacing:.02em;opacity:.85}
 .kpi .kcond b{color:#b9a894;font-weight:600}
-.kpi.g .v{color:var(--green)}.kpi.o .v{color:var(--orange-l)}.kpi.y .v{color:var(--yellow)}
+.kpi.g .v{color:var(--green)}.kpi.o .v{color:var(--orange-l)}.kpi.y .v{color:var(--yellow)}.kpi.b .v{color:var(--blue)}
 /* body */
-.body{flex:1;display:grid;grid-template-rows:0.82fr 1fr;gap:16px;min-height:0}
-.panel{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:16px 22px;display:flex;flex-direction:column;min-height:0;overflow:hidden}
-.pt{font-family:Sora;font-weight:700;font-size:15px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.pt::before{content:"";width:26px;height:3px;background:var(--orange);border-radius:2px}
+.body{flex:1;display:grid;grid-template-rows:0.78fr 1fr;gap:12px;min-height:0}
+.panel{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:12px 18px;display:flex;flex-direction:column;min-height:0;overflow:hidden}
+.pt{font-family:Sora;font-weight:700;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.pt::before{content:"";width:22px;height:3px;background:var(--orange);border-radius:2px}
 .pt.gr::before{background:var(--green)}
-.pt small{margin-left:auto;color:var(--orange-l);font-family:Sora;font-weight:700;letter-spacing:.02em;text-transform:none;font-size:14px}
+.pt small{margin-left:auto;color:var(--orange-l);font-family:Sora;font-weight:700;letter-spacing:.02em;text-transform:none;font-size:13px}
 .pt.gr small{color:var(--green-l)}
+/* TOP ROW: funil (5 cols) + redes (1 col) */
+.toprow{display:grid;grid-template-columns:5fr 1.2fr;gap:12px;min-height:0}
 /* funnel */
-.funnel{display:flex;align-items:flex-end;gap:0;flex:1;padding:4px 0 2px}
+.funnel{display:flex;align-items:flex-end;gap:0;flex:1;padding:2px 0 0}
 .fstep{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;position:relative}
-.fbar{width:84%;border-radius:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#1a1210}
-.fbar .fn{font-family:Sora;font-weight:800;font-size:46px;line-height:1}
-.fbar .fl{font-size:14px;font-weight:700;margin-top:2px;opacity:.9}
-.fconv{position:absolute;right:-30px;bottom:38%;z-index:5;display:flex;flex-direction:column;align-items:center;
-  background:#241a15;border:1.5px solid var(--orange);border-radius:12px;padding:6px 12px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
-.fconv .pc{font-family:Sora;font-weight:800;font-size:26px;color:#fff;line-height:1}
-.fconv .pl{font-size:11.5px;color:var(--gold);letter-spacing:.06em;font-weight:700;margin-top:2px}
-.cols3{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:16px;min-height:0}
-/* por classe (merge ativos+faturamento) */
-.clsrows{display:flex;flex-direction:column;gap:18px;flex:1;justify-content:center}
-.clsrow{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:12px}
-.clsh{font-family:Sora;font-weight:700;font-size:18px;line-height:1.1}
-.clsh span{display:block;font-family:Archivo;font-size:12.5px;color:var(--muted);font-weight:600;margin-top:2px}
-.clsh span b{color:var(--txt);font-weight:700}
-.clstrack{height:30px;background:#0e0a09;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.clsfill{height:100%;border-radius:7px 0 0 7px}
-.clsval{font-family:Sora;font-weight:800;font-size:18px;text-align:right;white-space:nowrap}
-.clsval small{display:block;font-family:Archivo;font-weight:600;font-size:11px;color:var(--gold);margin-top:1px}
-.clsfoot{font-size:12.5px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}
+.fbar{width:82%;border-radius:12px;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#1a1210}
+.fbar .fn{font-family:Sora;font-weight:800;font-size:42px;line-height:1}
+.fbar .fl{font-size:13px;font-weight:700;margin-top:2px;opacity:.9}
+.fconv{position:absolute;right:-28px;bottom:36%;z-index:5;display:flex;flex-direction:column;align-items:center;
+  background:#241a15;border:1.5px solid var(--orange);border-radius:10px;padding:5px 10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.fconv .pc{font-family:Sora;font-weight:800;font-size:22px;color:#fff;line-height:1}
+.fconv .pl{font-size:10.5px;color:var(--gold);letter-spacing:.06em;font-weight:700;margin-top:1px}
+/* redes panel — agora na coluna larga */
+.rede-head{font-size:9.5px;color:var(--muted);margin:-5px 0 4px;letter-spacing:.04em}
+.redes-list{display:flex;flex-direction:column;gap:0;flex:1;justify-content:space-between;overflow:hidden}
+.rede-row{display:grid;grid-template-columns:152px 1fr 24px 82px;align-items:center;gap:8px;line-height:1}
+.rede-nm{font-size:11px;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rede-sp{height:8px;border-radius:4px;overflow:hidden;display:flex;background:#0e0a09;min-width:22px}
+.rede-sp i{height:100%;display:block}
+.rede-sp .ra{background:linear-gradient(90deg,#E8631A,#F7913F)}
+.rede-sp .rc{background:linear-gradient(90deg,#2E7D46,#3DAE6B)}
+.rede-v{font-family:Sora;font-weight:800;font-size:13px;color:var(--orange-l);text-align:right}
+.rede-dt{font-size:9.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.rede-leg{display:flex;gap:12px;font-size:10px;color:var(--muted);margin-top:6px;padding-top:5px;border-top:1px solid var(--line);flex:0 0 auto;align-items:center}
+.rede-leg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:3px;vertical-align:0}
+/* BOTTOM ROW */
+.cols3{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:12px;min-height:0}
+/* por classe — agora na coluna estreita: rótulo acima da barra */
+.clsrows{display:flex;flex-direction:column;gap:11px;flex:1;justify-content:center}
+.clsrow{display:flex;flex-direction:column;gap:3px}
+.clsh{font-family:Sora;font-weight:700;font-size:13px;line-height:1;display:flex;align-items:baseline;justify-content:space-between}
+.clsh em{font-family:Archivo;font-style:normal;font-size:10px;color:var(--muted);font-weight:600}
+.clstrack{height:14px;background:#0e0a09;border:1px solid var(--line);border-radius:5px;overflow:hidden}
+.clsfill{height:100%;border-radius:4px 0 0 4px}
+.clsval{font-family:Sora;font-weight:800;font-size:14px;display:flex;align-items:baseline;justify-content:space-between;white-space:nowrap}
+.clsval small{font-family:Archivo;font-weight:600;font-size:10px;color:var(--gold)}
+.clsfoot{font-size:9.5px;color:var(--muted);margin-top:7px;padding-top:6px;border-top:1px solid var(--line);line-height:1.4}
 .clsfoot b{color:var(--txt)}
-/* top parceiros (compacto) */
+/* top parceiros */
 .tp{display:flex;flex-direction:column;gap:3px;flex:1 1 0;min-height:0;justify-content:center}
-.tprow{display:grid;grid-template-columns:116px 1fr 78px;align-items:center;gap:10px}
-.tpnm{font-size:12.5px;line-height:1.12}.tpnm b{font-family:Sora;font-weight:800;font-size:14px;color:var(--orange-l)}
+.tprow{display:grid;grid-template-columns:110px 1fr 74px;align-items:center;gap:8px}
+.tpnm{font-size:11.5px;line-height:1.12}.tpnm b{font-family:Sora;font-weight:800;font-size:13px;color:var(--orange-l)}
 .tpnm.gr b{color:var(--green-l)}
-.tpnm span{display:block;color:var(--muted);font-size:11px}
-.tptrack{height:22px;border-radius:6px;overflow:hidden;display:flex;background:#0e0a09;border:1px solid var(--line)}
+.tpnm span{display:block;color:var(--muted);font-size:10.5px}
+.tptrack{height:20px;border-radius:6px;overflow:hidden;display:flex;background:#0e0a09;border:1px solid var(--line)}
 .tpwrap{display:flex;height:100%}
 .tpnova{height:100%;background:linear-gradient(90deg,#2E7D46,#5BD08A)}
-.tpcust{height:100%;background:linear-gradient(90deg,#E8631A,#F7913F)}
-.tpgold{height:100%;background:linear-gradient(90deg,#C98A1E,#E8A93A)}
-.tpgrey{height:100%;background:linear-gradient(90deg,#3a3330,#5a504a)}
-.tpv{font-family:Sora;font-weight:800;font-size:15px;text-align:right;white-space:nowrap;transition:filter .2s}
+.tpcust{height:100%;background:linear-gradient(90deg,#2980B9,#5DADE2)}
+.tpind{height:100%;background:linear-gradient(90deg,#7D3C98,#AF7AC5)}
+.tpv{font-family:Sora;font-weight:800;font-size:13px;text-align:right;white-space:nowrap;transition:filter .2s}
 .values-hidden .tpv{filter:blur(9px);user-select:none}
-.vtoggle{font-family:Archivo;font-size:13px;font-weight:600;color:var(--gold);background:#241a15;border:1px solid var(--line);border-radius:30px;padding:7px 16px;cursor:pointer;letter-spacing:.04em}
+.vtoggle{font-family:Archivo;font-size:12px;font-weight:600;color:var(--gold);background:#241a15;border:1px solid var(--line);border-radius:30px;padding:6px 14px;cursor:pointer;letter-spacing:.04em}
 .vtoggle:hover{border-color:var(--orange);color:var(--orange-l)}
-.vtoggle::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:7px;vertical-align:1px}
+.vtoggle::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:6px;vertical-align:1px}
 .stage:not(.values-hidden) .vtoggle::before{background:var(--gold)}
-.tpfoot{font-size:12px;color:var(--muted);margin-top:4px;padding-top:5px;border-top:1px solid var(--line);line-height:1.3;flex:0 0 auto}
+.tpfoot{font-size:11px;color:var(--muted);margin-top:3px;padding-top:4px;border-top:1px solid var(--line);line-height:1.3;flex:0 0 auto}
 .tpfoot b{color:var(--gold);font-weight:700}.tpfoot .rd{color:var(--txt);font-weight:600}
-.tplegend{display:flex;gap:12px;font-size:11.5px;color:var(--muted);margin-top:2px;align-items:center;flex-wrap:nowrap;white-space:nowrap;flex:0 0 auto}
-.tp.dense{gap:5px}
-.tp.dense .tptrack{height:18px}
-.tp.dense .tpnm b{font-size:13px}
-.tp.dense .tpnm span{font-size:10px}
-.tp.dense .tpv{font-size:14px}
-.panel .tplegend.dense{margin-top:4px;font-size:10.5px}
-.panel .tpfoot.dense{margin-top:5px;padding-top:5px;font-size:11px}
-.tplegend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.tplegend{display:flex;gap:10px;font-size:10.5px;color:var(--muted);margin-top:2px;align-items:center;flex-wrap:nowrap;white-space:nowrap;flex:0 0 auto}
+.tplegend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:3px;vertical-align:-1px}
 /* footer */
-.foot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.fcard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:10px 18px}
-.fcard .fv{font-family:Sora;font-weight:800;font-size:26px}
-.fcard .fll{font-size:12.5px;color:var(--muted);margin-top:1px}
-.fcard .fsub{font-size:12.5px;color:var(--gold);font-weight:600;margin-top:3px}
+.foot{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.fcard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:8px 14px}
+.fcard .fv{font-family:Sora;font-weight:800;font-size:20px;white-space:nowrap}
+.fcard .fll{font-size:10.5px;color:var(--muted);margin-top:1px;line-height:1.25}
+.fcard .fsub{font-size:10.5px;color:var(--gold);font-weight:600;margin-top:2px}
+.ftag{font-family:Sora;font-weight:700;font-size:12px;color:var(--purple);letter-spacing:.04em;
+  border:1px solid rgba(142,68,173,.5);background:rgba(142,68,173,.14);border-radius:20px;padding:2px 9px;vertical-align:3px;margin-left:3px}
+/* dither overlay */
+.stage::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:999;
+  background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAEklEQVQIW2P4z8DwHwMDAwMAGdYD/TY2mSYAAAAASUVORK5CYII=");
+  background-repeat:repeat;opacity:.03;mix-blend-mode:multiply}
 </style>
 </head>
 <body>
@@ -113,7 +124,7 @@ h1 b{color:var(--orange)}
   <header>
     <div>
       <div class="logo">&#9679;&#9679;&#9679; Incubadora &middot; Acelera AG TaxTech &middot; Gest&atilde;o &agrave; Vista</div>
-      <h1>Dash <b>TV</b> - Painel Incubadora Acelera &middot; 2026</h1>
+      <h1>Dash <b>TV</b> &mdash; Painel Incubadora Acelera &middot; 2026</h1>
     </div>
     <div class="hr">
       <div class="badge">Leitura Executiva &middot; 2026</div>
@@ -122,88 +133,119 @@ h1 b{color:var(--orange)}
     </div>
   </header>
 
+  <!-- KPIs — 6 cards -->
   <div class="kpis">
-    <div class="kpi"><div class="v">103</div><div class="l">Parceiros no programa</div><div class="ksub">Mensura&ccedil;&atilde;o: ingressos set/25 &rarr; jun/26</div></div>
-    <div class="kpi g"><div class="v">60</div><div class="l">Ativos no momento</div><div class="ksub">C1 32 &middot; C2 17 &middot; C3 11</div><div class="kcond">Condutor: <b>Maur&iacute;cio 28</b> &middot; <b>Naiana 17</b> &middot; <b>Vict&oacute;ria 15</b></div></div>
+    <div class="kpi"><div class="v">103</div><div class="l">Parceiros no programa</div><div class="ksub">60 ativos + 16 formados + 27 desinc.</div><div class="kcond">Mensura&ccedil;&atilde;o: ingressos set/25 &rarr; jul/26</div></div>
+    <div class="kpi g"><div class="v">60</div><div class="l">Ativos no momento</div><div class="ksub">C1 32 &middot; C2 17 &middot; C3 11</div><div class="kcond">Condutor: <b>Naiana 28</b> &middot; <b>Maur&iacute;cio 21</b> &middot; <b>Vict&oacute;ria 11</b></div></div>
     <div class="kpi"><div class="v">16</div><div class="l">Formados</div><div class="ksub">42,1% dos eleg&iacute;veis (&ge;90d)</div></div>
-    <div class="kpi y"><div class="v">27</div><div class="l">Desincubados</div><div class="ksub">churn 36% do total mensurado</div></div>
-    <div class="kpi o"><div class="v">R$ 8,68<span style="font-size:24px"> mi</span></div><div class="l">Faturado AG (FAT)</div><div class="ksub">313 NFs &middot; take 13,7% &middot; acumulado</div></div>
+    <div class="kpi y"><div class="v">27</div><div class="l">Desincubados</div><div class="ksub">churn 26,2% do total mensurado</div></div>
+    <div class="kpi o"><div class="v">R$ 2,99<span style="font-size:20px"> mi</span></div><div class="l">Consolidado (Novas + Herdado)</div><div class="ksub">95 NFs &middot; take 12,5%</div></div>
+    <div class="kpi b"><div class="v">14</div><div class="l">Redes ativas no programa</div><div class="ksub">9 faturando (64%)</div></div>
   </div>
 
   <div class="body">
-    <!-- FUNIL -->
-    <div class="panel">
-      <div class="pt">Funil de participantes &middot; convers&atilde;o por classe <small>do ingresso na C1 &agrave; gradua&ccedil;&atilde;o &mdash; todo o programa</small></div>
-      <div class="funnel">
-        <div class="fstep">
-          <div class="fbar" style="height:100%;background:linear-gradient(160deg,#F7913F,#E8631A)"><div class="fn">103</div><div class="fl">Entraram (C1)</div></div>
-          <div class="fconv"><div class="pc">60%</div><div class="pl">C1 &rarr; C2</div></div>
+    <!-- TOP ROW: Funil (5 cols) + Redes (1 col) -->
+    <div class="toprow">
+      <div class="panel">
+        <div class="pt">Funil de participantes &middot; convers&atilde;o por classe <small>do ingresso na C1 &agrave; gradua&ccedil;&atilde;o &mdash; todo o programa</small></div>
+        <div class="funnel">
+          <div class="fstep">
+            <div class="fbar" style="height:100%;background:linear-gradient(160deg,#F7913F,#E8631A)"><div class="fn">103</div><div class="fl">Entraram (C1)</div></div>
+            <div class="fconv"><div class="pc">53%</div><div class="pl">C1 &rarr; C2</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fbar" style="height:74%;background:linear-gradient(160deg,#ECA24A,#E08526)"><div class="fn">55</div><div class="fl">Chegaram &agrave; C2</div></div>
+            <div class="fconv"><div class="pc">49%</div><div class="pl">C2 &rarr; C3</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fbar" style="height:52%;background:linear-gradient(160deg,#E8A93A,#C98A1E)"><div class="fn">27</div><div class="fl">Chegaram &agrave; C3</div></div>
+            <div class="fconv"><div class="pc">59%</div><div class="pl">C3 &rarr; Grad</div></div>
+          </div>
+          <div class="fstep">
+            <div class="fbar" style="height:40%;background:linear-gradient(160deg,#3DAE6B,#2E7D46)"><div class="fn">16</div><div class="fl">Graduaram</div></div>
+          </div>
         </div>
-        <div class="fstep">
-          <div class="fbar" style="height:80%;background:linear-gradient(160deg,#ECA24A,#E08526)"><div class="fn">55</div><div class="fl">Chegaram &agrave; C2</div></div>
-          <div class="fconv"><div class="pc">49%</div><div class="pl">C2 &rarr; C3</div></div>
+      </div>
+
+      <!-- POR CLASSE: ativos & faturamento -->
+      <div class="panel">
+        <div class="pt" style="font-size:12px">Por classe</div>
+        <div class="rede-head">ativos &amp; faturamento</div>
+        <div class="clsrows">
+          <div class="clsrow"><div class="clsh">Classe 1 <em>32 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:1%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 4,3 mil <small>0,1%</small></div></div>
+          <div class="clsrow"><div class="clsh">Classe 2 <em>17 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:6%;background:linear-gradient(90deg,#E08526,#ECA24A)"></div></div><div class="clsval">R$ 157 mil <small>5,2%</small></div></div>
+          <div class="clsrow"><div class="clsh">Classe 3 <em>11 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:100%;background:linear-gradient(90deg,#2E7D46,#3DAE6B)"></div></div><div class="clsval">R$ 2,83 mi <small>94,6%</small></div></div>
         </div>
-        <div class="fstep">
-          <div class="fbar" style="height:60%;background:linear-gradient(160deg,#E8A93A,#C98A1E)"><div class="fn">27</div><div class="fl">Chegaram &agrave; C3</div></div>
-          <div class="fconv"><div class="pc">59%</div><div class="pl">C3 &rarr; Grad</div></div>
-        </div>
-        <div class="fstep">
-          <div class="fbar" style="height:48%;background:linear-gradient(160deg,#3DAE6B,#2E7D46)"><div class="fn">16</div><div class="fl">Graduaram</div></div>
-        </div>
+        <div class="clsfoot">C3 concentra <b>94,6%</b> do consolidado.<br>21 de 76 faturando (10 ativos + 11 formados).</div>
       </div>
     </div>
 
+    <!-- BOTTOM ROW: 3 panels -->
     <div class="cols3">
-      <!-- POR CLASSE: ativos + faturamento (merge) -->
+      <!-- TOP CASAS / REDES -->
       <div class="panel">
-        <div class="pt">Por classe &middot; ativos &amp; faturado (acumulado)</div>
-        <div class="clsrows">
-          <div class="clsrow"><div class="clsh">Classe 1<span><b>32</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:40%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 2,21 mi</div></div>
-          <div class="clsrow"><div class="clsh">Classe 2<span><b>17</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:9%;background:linear-gradient(90deg,#E08526,#ECA24A)"></div></div><div class="clsval">R$ 0,51 mi</div></div>
-          <div class="clsrow"><div class="clsh">Classe 3<span><b>11</b> ativos</span></div><div class="clstrack"><div class="clsfill" style="width:100%;background:linear-gradient(90deg,#2E7D46,#3DAE6B)"></div></div><div class="clsval">R$ 5,58 mi</div></div>
+        <div class="pt">Top CASAs / Redes <small>em andamento + conclu&iacute;dos</small></div>
+        <div class="redes-list">
+          <div class="rede-row"><div class="rede-nm">AG BH</div><div class="rede-sp"><i class="ra" style="width:54%"></i><i class="rc" style="width:46%"></i></div><div class="rede-v">13</div><div class="rede-dt">7 and. &middot; 6 concl.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG RJ</div><div class="rede-sp"><i class="ra" style="width:36%"></i><i class="rc" style="width:64%"></i></div><div class="rede-v">11</div><div class="rede-dt">4 and. &middot; 7 concl.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Bras&iacute;lia</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">8</div><div class="rede-dt">8 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">Hunter SP - M&aacute;rio Marques</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">8</div><div class="rede-dt">8 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Jundia&iacute;</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">6</div><div class="rede-dt">6 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Salvador</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">6</div><div class="rede-dt">6 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Curitiba</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">5</div><div class="rede-dt">5 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Recife</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">5</div><div class="rede-dt">5 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG SJK</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">4</div><div class="rede-dt">4 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">Expans&atilde;o</div><div class="rede-sp"><i class="ra" style="width:33%"></i><i class="rc" style="width:67%"></i></div><div class="rede-v">3</div><div class="rede-dt">1 and. &middot; 2 concl.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG S&atilde;o Caetano do Sul</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">2</div><div class="rede-dt">2 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Manaus</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">2</div><div class="rede-dt">2 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Cuiab&aacute;</div><div class="rede-sp"><i class="rc" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 concl.</div></div>
+          <div class="rede-row"><div class="rede-nm">AG Jo&atilde;o Pessoa</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
+          <div class="rede-row"><div class="rede-nm">Hunter SP - Vanessa</div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
         </div>
-        <div class="clsfoot"><b>Base: 60 ativos</b> (parceiros na classe hoje). O faturado de R$ 8,68 mi soma dois status: <b>R$ 7,49 mi (86%)</b> de em andamento + <b>R$ 1,19 mi (14%)</b> de <b>3 conclu&iacute;dos</b> (graduados, todos C3) &mdash; por isso a C3 aparece acima da sua base ativa.</div>
+        <div class="rede-leg"><span><i style="background:#E8631A"></i>Em andamento</span><span><i style="background:#3DAE6B"></i>Conclu&iacute;do</span><span style="margin-left:auto;color:var(--gold);font-weight:600">15 casas &middot; 9 faturando</span></div>
       </div>
 
-      <!-- NOVAS PRODUÇÕES (PÓS C1) — painel nova produção original (verde) -->
+      <!-- TOP NOVAS PRODUÇÕES -->
       <div class="panel">
-        <div class="pt gr">Top parceiros &middot; Novas Produ&ccedil;&otilde;es (P&oacute;s C1) &middot; <b style="color:var(--gold)">acumulado do programa</b> <small>R$ 517 mil</small></div>
+        <div class="pt gr">Top parceiros &middot; Novas Produ&ccedil;&otilde;es <small>R$ 913 mil</small></div>
         <div class="tp">
-          <div class="tprow"><div class="tpnm gr"><b>KMS</b><span>Rodrigo O. Dias</span></div><div class="tptrack"><div class="tpwrap" style="width:93%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 215 mil</div></div>
-          <div class="tprow"><div class="tpnm gr"><b>VRT</b><span>Vitor R. Teixeira</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 232 mil</div></div>
-          <div class="tprow"><div class="tpnm gr"><b>WLG</b><span>Wellington Gonzaga</span></div><div class="tptrack"><div class="tpwrap" style="width:10%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 24 mil</div></div>
-          <div class="tprow"><div class="tpnm gr"><b>RCB</b><span>Roberta Bayer</span></div><div class="tptrack"><div class="tpwrap" style="width:9%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 24 mil</div></div>
-          <div class="tprow"><div class="tpnm gr"><b>UMW</b><span>P&aacute;ris K&ouml;mel</span></div><div class="tptrack"><div class="tpwrap" style="width:5%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 13 mil</div></div>
-          <div class="tprow"><div class="tpnm gr"><b>CSD</b><span>Mario Cassio</span></div><div class="tptrack"><div class="tpwrap" style="width:1%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 2 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>KMS</b><span>Rodrigo O. Dias</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 269 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>WD</b><span>Walfredo Dantas</span></div><div class="tptrack"><div class="tpwrap" style="width:76%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 204 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>HHI</b><span>Daniel Cosini</span></div><div class="tptrack"><div class="tpwrap" style="width:51%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 137 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>SEW</b><span>Sergio E. da Costa</span></div><div class="tptrack"><div class="tpwrap" style="width:49%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 131 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>ENL</b><span>Daniel Pessoa</span></div><div class="tptrack"><div class="tpwrap" style="width:25%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 67 mil</div></div>
+          <div class="tprow"><div class="tpnm gr"><b>WAN</b><span>Manoel A. Coelho</span></div><div class="tptrack"><div class="tpwrap" style="width:16%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 42 mil</div></div>
         </div>
-        <div class="tpfoot"><b>Participa&ccedil;&atilde;o por rede:</b> <span class="rd">Alexandre Issa 49%</span> &middot; <span class="rd">Salvador 40%</span> &middot; <span class="rd">BH 7%</span> &middot; <span class="rd">Bras&iacute;lia 4%</span></div>
+        <div class="tpfoot"><b>Participa&ccedil;&atilde;o por rede:</b> <span class="rd">Expans&atilde;o 31%</span> &middot; <span class="rd">AG BH 29%</span> &middot; <span class="rd">Bras&iacute;lia 25%</span> &middot; <span class="rd">AG RJ 15%</span><br><b>9 parceiros</b> com novas produ&ccedil;&otilde;es &mdash; 52 NFs &middot; neg&oacute;cio criado AP&Oacute;S entrada na C1.</div>
       </div>
 
-      <!-- TOP TOTAL — painel original (nova verde + custódia laranja) -->
+      <!-- TOP CONSOLIDADO -->
       <div class="panel">
-        <div class="pt">Top parceiros &middot; faturado acumulado <small>R$ 8,68 mi</small></div>
-        <div class="tp dense">
-                    <div class="tprow"><div class="tpnm"><b>RCB</b><span>Roberta Bayer</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:2%"></div><div class="tpcust" style="width:98%"></div></div></div><div class="tpv">R$ 1,55 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>WD</b><span>Walfredo Dantas</span></div><div class="tptrack"><div class="tpwrap" style="width:81%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 1,26 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>WKF</b><span>Paulo Calarge</span></div><div class="tptrack"><div class="tpwrap" style="width:60%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,92 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>MRF</b><span>Mauricio Rollemberg</span></div><div class="tptrack"><div class="tpwrap" style="width:45%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,69 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>XOJ</b><span>Bas&iacute;lio Leandro</span></div><div class="tptrack"><div class="tpwrap" style="width:39%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,61 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>JOP</b><span>Jos&eacute; E. Oliveira</span></div><div class="tptrack"><div class="tpwrap" style="width:37%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,57 mi</div></div>
-          <div class="tprow"><div class="tpnm"><b>VWH</b><span>Raquel de Almeida</span></div><div class="tptrack"><div class="tpwrap" style="width:36%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 0,55 mi</div></div>
+        <div class="pt">Top parceiros &middot; Consolidado <small>R$ 2,99 mi</small></div>
+        <div class="tp">
+          <div class="tprow"><div class="tpnm"><b>WKF</b><span>Paulo Calarge</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 921 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>VRO</b><span>Valesca Rangel</span></div><div class="tptrack"><div class="tpwrap" style="width:34%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 314 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>HHI</b><span>Daniel Cosini</span></div><div class="tptrack"><div class="tpwrap" style="width:30%"><div class="tpnova" style="width:49%"></div><div class="tpcust" style="width:51%"></div></div></div><div class="tpv">R$ 278 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>KMS</b><span>Rodrigo O. Dias</span></div><div class="tptrack"><div class="tpwrap" style="width:29%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 269 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>VRT</b><span>Vitor R. Teixeira</span></div><div class="tptrack"><div class="tpwrap" style="width:26%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 238 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>WD</b><span>Walfredo Dantas</span></div><div class="tptrack"><div class="tpwrap" style="width:22%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 204 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>OOR</b><span>F&aacute;bio A. Freixo</span></div><div class="tptrack"><div class="tpwrap" style="width:17%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 159 mil</div></div>
         </div>
-        <div class="tplegend dense"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novos (P&oacute;s C1)</span><span><i style="background:linear-gradient(90deg,#E8631A,#F7913F)"></i>Herdado (cust&oacute;dia)</span><span style="margin-left:auto;color:var(--orange-l);font-weight:700">topo &asymp; 100% herdado</span></div>
-        <div class="tpfoot dense"><b>Participa&ccedil;&atilde;o por rede:</b> <span class="rd">Bras&iacute;lia 25%</span> &middot; <span class="rd">S&atilde;o Luis 15%</span> &middot; <span class="rd">Curitiba 12%</span> &middot; <span class="rd">RJ 11%</span> &middot; <span class="rd">Recife 9%</span></div>
+        <div class="tplegend"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novas</span><span><i style="background:linear-gradient(90deg,#2980B9,#5DADE2)"></i>Herdado</span><span style="margin-left:auto;color:var(--muted);font-size:10px">Consolidado = Novas + Herdado</span></div>
+        <div class="tpfoot"><b>NFs por rede:</b> <span class="rd">RJ 46</span> &middot; <span class="rd">BH 16</span> &middot; <span class="rd">Bras&iacute;lia 11</span> &middot; <span class="rd">Expans&atilde;o 9</span> &middot; <span class="rd">Salvador 8</span></div>
       </div>
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="foot">
     <div class="fcard"><div class="fv" style="color:var(--green)">42,1%</div><div class="fll">Forma&ccedil;&atilde;o ajustada (16 de 38 eleg&iacute;veis &ge;90d)</div></div>
-    <div class="fcard"><div class="fv">R$ 28 mil</div><div class="fll">Ticket m&eacute;dio por NF (R$ 8,68 mi &divide; 313 NFs)</div><div class="fsub">C1 R$ 20 mil &middot; C2 R$ 37 mil &middot; C3 R$ 31 mil</div></div>
+    <div class="fcard"><div class="fv">R$ 31,5 mil</div><div class="fll">Ticket m&eacute;dio por NF (R$ 2,99 mi &divide; 95)</div><div class="fsub">21 parceiros faturando de 76 no escopo</div></div>
     <div class="fcard"><div class="fv" style="color:var(--yellow)">10</div><div class="fll">Repetentes (al&eacute;m da cad&ecirc;ncia)</div><div class="fsub">C1 4 (40%) &middot; C2 5 (50%) &middot; C3 1 (10%)</div></div>
+    <div class="fcard" style="border-left-color:var(--purple)"><div class="fv" style="color:var(--purple)">R$ 791 mil <span class="ftag">Indiretos</span></div><div class="fll">+26,4% incremental sobre o Consolidado</div><div class="fsub">4 parceiros &middot; 27 NFs &middot; n&atilde;o soma ao Consolidado</div></div>
     <div class="fcard"><div class="fv" style="color:var(--orange-l)">56 dias</div><div class="fll">Ciclo mediano Cria&ccedil;&atilde;o &rarr; Autoriza&ccedil;&atilde;o</div><div class="fsub">C1 56d &middot; C2 68d &middot; C3 51d</div></div>
   </div>
-  <div style="text-align:center;font-size:12px;color:#9a8b7a;opacity:.78;margin-top:6px;letter-spacing:.3px">Faturamento soma AG + AG TAX &mdash; AG TAX &asymp; 2% em junho; nesta vis&atilde;o os valores n&atilde;o s&atilde;o diferenciados por funil.</div>
+  <div style="text-align:center;font-size:11px;color:#9a8b7a;opacity:.78;margin-top:4px;letter-spacing:.3px">Consolidado = Novas + Herdado. S&oacute; neg&oacute;cios autorizados ap&oacute;s entrada na C1. Indireto &eacute; paralelo (parceiro n&atilde;o propriet&aacute;rio).</div>
 </div></div>
 <script>
 function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
