@@ -26,7 +26,7 @@ header{display:flex;align-items:flex-end;justify-content:space-between;border-bo
 h1{font-family:Sora;font-weight:800;font-size:38px;line-height:1;letter-spacing:-.02em;margin-top:6px}
 h1 b{color:var(--orange)}
 .hr{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.badge{font-family:Sora;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:7px 16px;border-radius:30px}
+.badge{font-family:Sora;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);padding:7px 16px;border-radius:30px}
 .dt{font-family:Archivo;font-size:15px;color:var(--muted)}.dt b{color:var(--txt);font-weight:700;text-transform:capitalize}
 /* KPI strip — 6 cards */
 .kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
@@ -34,8 +34,8 @@ h1 b{color:var(--orange)}
 .kpi::after{content:"";position:absolute;right:-22px;top:-22px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle,rgba(232,99,26,.25),transparent 70%)}
 .kpi .v{font-family:Sora;font-weight:800;font-size:38px;line-height:1}
 .kpi .l{color:var(--muted);font-size:13px;letter-spacing:.03em;margin-top:3px}
-.kpi .ksub{color:var(--gold);font-size:11.5px;margin-top:3px;font-weight:600}
-.kpi .kcond{color:var(--muted);font-size:10px;margin-top:2px;font-weight:500;letter-spacing:.02em;opacity:.85}
+.kpi .ksub{color:var(--gold);font-size:12.5px;margin-top:3px;font-weight:600}
+.kpi .kcond{color:var(--muted);font-size:11px;margin-top:2px;font-weight:500;letter-spacing:.02em;opacity:.85}
 .kpi .kcond b{color:#b9a894;font-weight:600}
 .kpi.g .v{color:var(--green)}.kpi.o .v{color:var(--orange-l)}.kpi.y .v{color:var(--yellow)}.kpi.b .v{color:var(--blue)}
 /* body */
@@ -57,19 +57,19 @@ h1 b{color:var(--orange)}
 .fconv{position:absolute;right:-28px;bottom:36%;z-index:5;display:flex;flex-direction:column;align-items:center;
   background:#241a15;border:1.5px solid var(--orange);border-radius:10px;padding:5px 10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
 .fconv .pc{font-family:Sora;font-weight:800;font-size:22px;color:#fff;line-height:1}
-.fconv .pl{font-size:10.5px;color:var(--gold);letter-spacing:.06em;font-weight:700;margin-top:1px}
+.fconv .pl{font-size:11.5px;color:var(--gold);letter-spacing:.06em;font-weight:700;margin-top:1px}
 /* redes panel — agora na coluna larga */
-.rede-head{font-size:9.5px;color:var(--muted);margin:-5px 0 4px;letter-spacing:.04em}
+.rede-head{font-size:10.5px;color:var(--muted);margin:-5px 0 4px;letter-spacing:.04em}
 .redes-list{display:flex;flex-direction:column;gap:0;flex:1;justify-content:space-between;overflow:hidden}
-.rede-row{display:grid;grid-template-columns:152px 1fr 24px 82px;align-items:center;gap:8px;line-height:1}
-.rede-nm{font-size:11px;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rede-row{display:grid;grid-template-columns:152px 1fr 24px 82px;align-items:center;gap:8px;line-height:.95}
+.rede-nm{font-size:12px;color:var(--txt);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .rede-sp{height:8px;border-radius:4px;overflow:hidden;display:flex;background:#0e0a09;min-width:22px}
 .rede-sp i{height:100%;display:block}
 .rede-sp .ra{background:linear-gradient(90deg,#E8631A,#F7913F)}
 .rede-sp .rc{background:linear-gradient(90deg,#2E7D46,#3DAE6B)}
 .rede-v{font-family:Sora;font-weight:800;font-size:13px;color:var(--orange-l);text-align:right}
-.rede-dt{font-size:9.5px;color:var(--muted);text-align:right;white-space:nowrap}
-.rede-leg{display:flex;gap:12px;font-size:10px;color:var(--muted);margin-top:6px;padding-top:5px;border-top:1px solid var(--line);flex:0 0 auto;align-items:center}
+.rede-dt{font-size:10.5px;color:var(--muted);text-align:right;white-space:nowrap}
+.rede-leg{display:flex;gap:12px;font-size:11px;color:var(--muted);margin-top:6px;padding-top:5px;border-top:1px solid var(--line);flex:0 0 auto;align-items:center}
 .rede-leg i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:3px;vertical-align:0}
 /* BOTTOM ROW */
 .cols3{display:grid;grid-template-columns:1.02fr 1fr 1fr;gap:12px;min-height:0}
@@ -77,19 +77,19 @@ h1 b{color:var(--orange)}
 .clsrows{display:flex;flex-direction:column;gap:11px;flex:1;justify-content:center}
 .clsrow{display:flex;flex-direction:column;gap:3px}
 .clsh{font-family:Sora;font-weight:700;font-size:13px;line-height:1;display:flex;align-items:baseline;justify-content:space-between}
-.clsh em{font-family:Archivo;font-style:normal;font-size:10px;color:var(--muted);font-weight:600}
+.clsh em{font-family:Archivo;font-style:normal;font-size:11px;color:var(--muted);font-weight:600}
 .clstrack{height:14px;background:#0e0a09;border:1px solid var(--line);border-radius:5px;overflow:hidden}
 .clsfill{height:100%;border-radius:4px 0 0 4px}
 .clsval{font-family:Sora;font-weight:800;font-size:14px;display:flex;align-items:baseline;justify-content:space-between;white-space:nowrap}
-.clsval small{font-family:Archivo;font-weight:600;font-size:10px;color:var(--gold)}
-.clsfoot{font-size:9.5px;color:var(--muted);margin-top:7px;padding-top:6px;border-top:1px solid var(--line);line-height:1.4}
+.clsval small{font-family:Archivo;font-weight:600;font-size:11px;color:var(--gold)}
+.clsfoot{font-size:10.5px;color:var(--muted);margin-top:7px;padding-top:6px;border-top:1px solid var(--line);line-height:1.4}
 .clsfoot b{color:var(--txt)}
 /* top parceiros */
 .tp{display:flex;flex-direction:column;gap:3px;flex:1 1 0;min-height:0;justify-content:center}
 .tprow{display:grid;grid-template-columns:110px 1fr 74px;align-items:center;gap:8px}
-.tpnm{font-size:11.5px;line-height:1.12}.tpnm b{font-family:Sora;font-weight:800;font-size:13px;color:var(--orange-l)}
+.tpnm{font-size:12.5px;line-height:1.12}.tpnm b{font-family:Sora;font-weight:800;font-size:13px;color:var(--orange-l)}
 .tpnm.gr b{color:var(--green-l)}
-.tpnm span{display:block;color:var(--muted);font-size:10.5px}
+.tpnm span{display:block;color:var(--muted);font-size:11.5px}
 .tptrack{height:20px;border-radius:6px;overflow:hidden;display:flex;background:#0e0a09;border:1px solid var(--line)}
 .tpwrap{display:flex;height:100%}
 .tpnova{height:100%;background:linear-gradient(90deg,#2E7D46,#5BD08A)}
@@ -97,21 +97,21 @@ h1 b{color:var(--orange)}
 .tpind{height:100%;background:linear-gradient(90deg,#7D3C98,#AF7AC5)}
 .tpv{font-family:Sora;font-weight:800;font-size:13px;text-align:right;white-space:nowrap;transition:filter .2s}
 .values-hidden .tpv{filter:blur(9px);user-select:none}
-.vtoggle{font-family:Archivo;font-size:12px;font-weight:600;color:var(--gold);background:#241a15;border:1px solid var(--line);border-radius:30px;padding:6px 14px;cursor:pointer;letter-spacing:.04em}
+.vtoggle{font-family:Archivo;font-size:12.5px;font-weight:600;color:var(--gold);background:#241a15;border:1px solid var(--line);border-radius:30px;padding:6px 14px;cursor:pointer;letter-spacing:.04em}
 .vtoggle:hover{border-color:var(--orange);color:var(--orange-l)}
 .vtoggle::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--orange);margin-right:6px;vertical-align:1px}
 .stage:not(.values-hidden) .vtoggle::before{background:var(--gold)}
-.tpfoot{font-size:11px;color:var(--muted);margin-top:3px;padding-top:4px;border-top:1px solid var(--line);line-height:1.3;flex:0 0 auto}
+.tpfoot{font-size:12px;color:var(--muted);margin-top:3px;padding-top:4px;border-top:1px solid var(--line);line-height:1.3;flex:0 0 auto}
 .tpfoot b{color:var(--gold);font-weight:700}.tpfoot .rd{color:var(--txt);font-weight:600}
-.tplegend{display:flex;gap:10px;font-size:10.5px;color:var(--muted);margin-top:2px;align-items:center;flex-wrap:nowrap;white-space:nowrap;flex:0 0 auto}
+.tplegend{display:flex;gap:10px;font-size:11.5px;color:var(--muted);margin-top:2px;align-items:center;flex-wrap:nowrap;white-space:nowrap;flex:0 0 auto}
 .tplegend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:3px;vertical-align:-1px}
 /* footer */
 .foot{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .fcard{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:10px;padding:8px 14px}
 .fcard .fv{font-family:Sora;font-weight:800;font-size:20px;white-space:nowrap}
-.fcard .fll{font-size:10.5px;color:var(--muted);margin-top:1px;line-height:1.25}
-.fcard .fsub{font-size:10.5px;color:var(--gold);font-weight:600;margin-top:2px}
-.ftag{font-family:Sora;font-weight:700;font-size:12px;color:var(--purple);letter-spacing:.04em;
+.fcard .fll{font-size:11.5px;color:var(--muted);margin-top:1px;line-height:1.25}
+.fcard .fsub{font-size:11.5px;color:var(--gold);font-weight:600;margin-top:2px}
+.ftag{font-family:Sora;font-weight:700;font-size:12.5px;color:var(--purple);letter-spacing:.04em;
   border:1px solid rgba(142,68,173,.5);background:rgba(142,68,173,.14);border-radius:20px;padding:2px 9px;vertical-align:3px;margin-left:3px}
 /* dither overlay */
 .stage::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:999;
@@ -169,7 +169,7 @@ h1 b{color:var(--orange)}
 
       <!-- POR CLASSE: ativos & faturamento -->
       <div class="panel">
-        <div class="pt" style="font-size:12px">Por classe</div>
+        <div class="pt" style="font-size:12.5px">Por classe</div>
         <div class="rede-head">ativos &amp; faturamento</div>
         <div class="clsrows">
           <div class="clsrow"><div class="clsh">Classe 1 <em>32 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:1%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 4,3 mil <small>0,1%</small></div></div>
@@ -231,7 +231,7 @@ h1 b{color:var(--orange)}
           <div class="tprow"><div class="tpnm"><b>VRT</b><span>Vitor R. Teixeira</span></div><div class="tptrack"><div class="tpwrap" style="width:26%"><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 238 mil</div></div>
           <div class="tprow"><div class="tpnm"><b>WD</b><span>Walfredo Dantas</span></div><div class="tptrack"><div class="tpwrap" style="width:22%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 204 mil</div></div>
         </div>
-        <div class="tplegend"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novas</span><span><i style="background:linear-gradient(90deg,#2980B9,#5DADE2)"></i>Herdado</span><span style="margin-left:auto;color:var(--muted);font-size:10px">Consolidado = Novas + Herdado</span></div>
+        <div class="tplegend"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novas</span><span><i style="background:linear-gradient(90deg,#2980B9,#5DADE2)"></i>Herdado</span><span style="margin-left:auto;color:var(--muted);font-size:11px">Consolidado = Novas + Herdado</span></div>
         <div class="tpfoot"><b>NFs por rede:</b> <span class="rd">AG BH 35</span> &middot; <span class="rd">AG RJ 33</span> &middot; <span class="rd">Expans&atilde;o 13</span> &middot; <span class="rd">Bras&iacute;lia 12</span> &middot; <span class="rd">Salvador 3</span></div>
       </div>
     </div>
@@ -245,7 +245,7 @@ h1 b{color:var(--orange)}
     <div class="fcard" style="border-left-color:var(--purple)"><div class="fv" style="color:var(--purple)">R$ 828 mil <span class="ftag">Indiretos</span></div><div class="fll">+24,1% incremental sobre o Consolidado</div><div class="fsub">4 parceiros &middot; 28 NFs &middot; n&atilde;o soma ao Consolidado</div></div>
     <div class="fcard"><div class="fv" style="color:var(--orange-l)">56 dias</div><div class="fll">Ciclo mediano Cria&ccedil;&atilde;o &rarr; Autoriza&ccedil;&atilde;o</div><div class="fsub">C1 56d &middot; C2 68d &middot; C3 51d</div></div>
   </div>
-  <div style="text-align:center;font-size:11px;color:#9a8b7a;opacity:.78;margin-top:4px;letter-spacing:.3px">Consolidado = Novas + Herdado. S&oacute; neg&oacute;cios autorizados ap&oacute;s entrada na C1. Formados medidos at&eacute; 60 dias ap&oacute;s a gradua&ccedil;&atilde;o (ciclo de venda). Indireto &eacute; paralelo (parceiro n&atilde;o propriet&aacute;rio).</div>
+  <div style="text-align:center;font-size:12px;color:#9a8b7a;opacity:.78;margin-top:4px;letter-spacing:.3px">Consolidado = Novas + Herdado. S&oacute; neg&oacute;cios autorizados ap&oacute;s entrada na C1. Formados medidos at&eacute; 60 dias ap&oacute;s a gradua&ccedil;&atilde;o (ciclo de venda). Indireto &eacute; paralelo (parceiro n&atilde;o propriet&aacute;rio).</div>
 </div></div>
 <script>
 function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
