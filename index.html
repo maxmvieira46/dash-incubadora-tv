@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- build: 2026-11-04 · fechamento de outubro (setembro recalculado) · roster 04/11 · CRM 06/11 · NF até 31/10 (base 06/11) -->
+<!-- build: 2026-11-04 · fechamento de outubro (setembro recalculado) · roster 11/11 (com a passagem de classe do fechamento) · CRM 06/11 · NF até 31/10 (base 06/11) -->
 <title>Dash TV &middot; Painel Acelera&ccedil;&atilde;o de Parcerias 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Archivo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -172,7 +172,7 @@ header{border-bottom-color:rgba(42,33,29,.8)}
 .rede-v{font-size:12px;line-height:1}
 .rede-dt{font-size:10.5px;line-height:1}
 .rede-sp{height:7px}
-/* out/26: Top CASAs com 21 redes (Cluster C como rede); marcador discreto de Cluster C */
+/* out/26 (12/11): Top CASAs com 19 redes; Expansão unificada (Nayara, Felipe e base anterior); Programa de Reaquecimento como rede própria */
 .redes-list{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:repeat(12,1fr);grid-auto-flow:column;column-gap:16px;row-gap:0;align-items:center}
 .rede-row{grid-template-columns:146px minmax(14px,1fr) 16px 78px;gap:4px;min-width:0}
 .rede-dt{overflow:hidden;letter-spacing:-.01em}
@@ -199,7 +199,7 @@ header{border-bottom-color:rgba(42,33,29,.8)}
       <h1>Dash <b>TV</b> &middot; Painel Acelera&ccedil;&atilde;o de Parcerias &middot; 2026</h1>
     </div>
     <div class="hr">
-      <div class="badge">Leitura Executiva &middot; 2026 &middot; Passagem de classe: 13/10</div>
+      <div class="badge">Leitura Executiva &middot; 2026 &middot; Fechamento de outubro</div>
       <button id="blurToggle" class="vtoggle">Ocultar valores</button>
       <div class="dt" id="dt"></div>
     </div>
@@ -207,34 +207,34 @@ header{border-bottom-color:rgba(42,33,29,.8)}
 
   <!-- KPIs — 6 cards -->
   <div class="kpis">
-    <div class="kpi"><div class="v">178<span class="ccf ccl">inclui Cluster C 8</span></div><div class="l">Passaram pelo programa</div><div class="kcond">Roster 04/11 &middot; CRM 06/11 &middot; NF jan &rarr; 31/out/26</div></div>
-    <div class="kpi g"><div class="v">69</div><div class="l">Ativos no momento</div><div class="ksub">C1 39 &middot; C2 19 &middot; C3 11<br>Turma Novembro 22 &middot; Cluster C 6</div><div class="kcond">Condutor: <b>Maur&iacute;cio 28</b> &middot; <b>Naiana 19</b> &middot; <b>Vict&oacute;ria 22</b></div></div>
-    <div class="kpi"><div class="v">50</div><div class="l">Formados</div><div class="ksub">taxa de forma&ccedil;&atilde;o 45,9% (formados &divide; sa&iacute;das)</div></div>
-    <div class="kpi y"><div class="v">59</div><div class="l">Desincubados</div><div class="ksub">churn 33,1% dos 178 do programa</div></div>
-    <div class="kpi o"><div class="v">R$ 10,56<span style="font-size:20px"> mi</span></div><div class="l">Consolidado (Novas + Herdado)</div><div class="ksub">413 NFs &middot; leitura Vendas AG</div></div>
-    <div class="kpi b"><div class="v">21</div><div class="l">Redes ativas no programa</div><div class="ksub">16 delas faturando &middot; <b>76%</b> das redes ativas</div></div>
+    <div class="kpi"><div class="v">178<span class="ccf ccl" title="Programa de Reaquecimento">inclui Reaquecimento 8</span></div><div class="l">Passaram pelo programa</div><div class="kcond">Roster 11/11 &middot; CRM 06/11 &middot; NF jan &rarr; 31/out/26</div></div>
+    <div class="kpi g"><div class="v">51</div><div class="l">Ativos no momento</div><div class="ksub">C1 27 &middot; C2 16 &middot; C3 8<br>Turma recente 22 &middot; Reaquecimento 6</div><div class="kcond">Condutor: <b>Maur&iacute;cio 20</b> &middot; <b>Naiana 16</b> &middot; <b>Vict&oacute;ria 15</b></div></div>
+    <div class="kpi"><div class="v">58</div><div class="l">Formados</div><div class="ksub">taxa de forma&ccedil;&atilde;o 45,7% (formados &divide; sa&iacute;das)</div></div>
+    <div class="kpi y"><div class="v">69</div><div class="l">Desincubados</div><div class="ksub">churn 38,8% dos 178 do programa</div></div>
+    <div class="kpi o"><div class="v">R$ 10,55<span style="font-size:20px"> mi</span></div><div class="l">Consolidado (Novas + Herdado)</div><div class="ksub">412 NFs &middot; leitura Vendas AG</div></div>
+    <div class="kpi b"><div class="v">16</div><div class="l">Redes ativas no programa</div><div class="ksub">12 delas faturando &middot; <b>75%</b> das redes ativas</div></div>
   </div>
 
   <div class="body">
     <!-- TOP ROW: Funil (5 cols) + Redes (1 col) -->
     <div class="toprow">
       <div class="panel">
-        <div class="pt">Funil de participantes &middot; convers&atilde;o por classe <small>do ingresso na C1 &agrave; gradua&ccedil;&atilde;o &middot; sem os 22 entrantes de 04/11</small></div>
+        <div class="pt">Funil de participantes &middot; convers&atilde;o por classe <small>do ingresso na C1 &agrave; gradua&ccedil;&atilde;o &middot; sem os 22 entrantes da turma recente</small></div>
         <div class="funnel">
           <div class="fstep">
             <div class="fbar" style="height:100%;background:linear-gradient(160deg,#FFA55A,#E8631A);box-shadow:inset 0 2px 0 rgba(255,255,255,.15),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">156</div><div class="fl">Entraram (C1)</div></div>
-            <div class="fconv"><div class="pc">63%</div><div class="pl">C1 &rarr; C2</div></div>
+            <div class="fconv"><div class="pc">66%</div><div class="pl">C1 &rarr; C2</div></div>
           </div>
           <div class="fstep">
-            <div class="fbar" style="height:63%;background:linear-gradient(160deg,#F5B25E,#E08526);box-shadow:inset 0 2px 0 rgba(255,255,255,.15),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">98</div><div class="fl">Chegaram &agrave; C2</div></div>
-            <div class="fconv"><div class="pc">62%</div><div class="pl">C2 &rarr; C3</div></div>
+            <div class="fbar" style="height:66%;background:linear-gradient(160deg,#F5B25E,#E08526);box-shadow:inset 0 2px 0 rgba(255,255,255,.15),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">103</div><div class="fl">Chegaram &agrave; C2</div></div>
+            <div class="fconv"><div class="pc">65%</div><div class="pl">C2 &rarr; C3</div></div>
           </div>
           <div class="fstep">
-            <div class="fbar" style="height:50%;background:linear-gradient(160deg,#F0BC52,#C98A1E);box-shadow:inset 0 2px 0 rgba(255,255,255,.15),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">61</div><div class="fl">Chegaram &agrave; C3</div></div>
-            <div class="fconv"><div class="pc">82%</div><div class="pl">C3 &rarr; Grad</div></div>
+            <div class="fbar" style="height:55%;background:linear-gradient(160deg,#F0BC52,#C98A1E);box-shadow:inset 0 2px 0 rgba(255,255,255,.15),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">67</div><div class="fl">Chegaram &agrave; C3</div></div>
+            <div class="fconv"><div class="pc">87%</div><div class="pl">C3 &rarr; Grad</div></div>
           </div>
           <div class="fstep">
-            <div class="fbar" style="height:45%;background:linear-gradient(160deg,#5BD08A,#2E7D46);box-shadow:inset 0 2px 0 rgba(255,255,255,.18),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">50</div><div class="fl">Graduaram</div></div>
+            <div class="fbar" style="height:52%;background:linear-gradient(160deg,#5BD08A,#2E7D46);box-shadow:inset 0 2px 0 rgba(255,255,255,.18),inset 0 -2px 4px rgba(0,0,0,.15)"><div class="fn">58</div><div class="fl">Graduaram</div></div>
           </div>
         </div>
       </div>
@@ -244,11 +244,11 @@ header{border-bottom-color:rgba(42,33,29,.8)}
         <div class="pt" style="font-size:12.5px">Por classe</div>
         <div class="rede-head">ativos &amp; faturamento gerado (foto)</div>
         <div class="clsrows">
-          <div class="clsrow"><div class="clsh">Classe 1 <em>39 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:19%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 1,33 mi <small>12,6%</small></div></div>
-          <div class="clsrow"><div class="clsh">Classe 2 <em>19 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:30%;background:linear-gradient(90deg,#E08526,#ECA24A)"></div></div><div class="clsval">R$ 2,12 mi <small>20,1%</small></div></div>
-          <div class="clsrow"><div class="clsh">Classe 3 <em>11 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:100%;background:linear-gradient(90deg,#2E7D46,#3DAE6B)"></div></div><div class="clsval">R$ 7,11 mi <small>67,3%</small></div></div>
+          <div class="clsrow"><div class="clsh">Classe 1 <em>27 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:19%;background:linear-gradient(90deg,#E8631A,#F7913F)"></div></div><div class="clsval">R$ 1,33 mi <small>12,6%</small></div></div>
+          <div class="clsrow"><div class="clsh">Classe 2 <em>16 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:30%;background:linear-gradient(90deg,#E08526,#ECA24A)"></div></div><div class="clsval">R$ 2,12 mi <small>20,1%</small></div></div>
+          <div class="clsrow"><div class="clsh">Classe 3 <em>8 ativos</em></div><div class="clstrack"><div class="clsfill" style="width:100%;background:linear-gradient(90deg,#2E7D46,#3DAE6B)"></div></div><div class="clsval">R$ 7,11 mi <small>67,4%</small></div></div>
         </div>
-        <div class="clsfoot"><b>Foto:</b> faturamento gerado enquanto o parceiro estava na classe; n&atilde;o redistribui ao promover.<br>Registra tamb&eacute;m formados e promovidos, no per&iacute;odo/classe em que geraram. Total R$ 10,56 mi &middot; 413 NFs.</div>
+        <div class="clsfoot"><b>Foto:</b> faturamento gerado enquanto o parceiro estava na classe; n&atilde;o redistribui ao promover.<br>Registra tamb&eacute;m formados e promovidos, no per&iacute;odo/classe em que geraram. Total R$ 10,55 mi &middot; 412 NFs.</div>
       </div>
     </div>
 
@@ -259,28 +259,26 @@ header{border-bottom-color:rgba(42,33,29,.8)}
         <div class="pt">Top CASAs / Redes <small>em andamento + conclu&iacute;dos</small></div>
         <div class="redes-list">
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG BH</span></div><div class="rede-sp"><i class="ra" style="width:14%"></i><i class="rc" style="width:86%"></i></div><div class="rede-v">14</div><div class="rede-dt">2 and. &middot; 12 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Hunter SP - M&#225;rio Marques</span></div><div class="rede-sp"><i class="ra" style="width:85%"></i><i class="rc" style="width:15%"></i></div><div class="rede-v">13</div><div class="rede-dt">11 and. &middot; 2 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">Hunter SP &#183; M&#225;rio Marques</span></div><div class="rede-sp"><i class="ra" style="width:58%"></i><i class="rc" style="width:42%"></i></div><div class="rede-v">12</div><div class="rede-dt">7 and. &middot; 5 conc.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG RJ</span></div><div class="rede-sp"><i class="ra" style="width:9%"></i><i class="rc" style="width:91%"></i></div><div class="rede-v">11</div><div class="rede-dt">1 and. &middot; 10 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn" title="AG S&#227;o Jos&#233; dos Campos">AG S. Jos&#233; dos Campos</span></div><div class="rede-sp"><i class="ra" style="width:91%"></i><i class="rc" style="width:9%"></i></div><div class="rede-v">11</div><div class="rede-dt">10 and. &middot; 1 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Salvador</span></div><div class="rede-sp"><i class="ra" style="width:60%"></i><i class="rc" style="width:40%"></i></div><div class="rede-v">10</div><div class="rede-dt">6 and. &middot; 4 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Jundia&#237;</span></div><div class="rede-sp"><i class="ra" style="width:70%"></i><i class="rc" style="width:30%"></i></div><div class="rede-v">10</div><div class="rede-dt">7 and. &middot; 3 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Expans&#227;o Nayara</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">8</div><div class="rede-dt">8 and.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Curitiba</span></div><div class="rede-sp"><i class="ra" style="width:57%"></i><i class="rc" style="width:43%"></i></div><div class="rede-v">7</div><div class="rede-dt">4 and. &middot; 3 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Cluster C</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">6</div><div class="rede-dt">6 and.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Salvador</span></div><div class="rede-sp"><i class="ra" style="width:40%"></i><i class="rc" style="width:60%"></i></div><div class="rede-v">10</div><div class="rede-dt">4 and. &middot; 6 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn" title="AG S&#227;o Jos&#233; dos Campos">AG S. Jos&#233; dos Campos</span></div><div class="rede-sp"><i class="ra" style="width:90%"></i><i class="rc" style="width:10%"></i></div><div class="rede-v">10</div><div class="rede-dt">9 and. &middot; 1 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Jundia&#237;</span></div><div class="rede-sp"><i class="ra" style="width:67%"></i><i class="rc" style="width:33%"></i></div><div class="rede-v">9</div><div class="rede-dt">6 and. &middot; 3 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">Expans&#227;o</span></div><div class="rede-sp"><i class="ra" style="width:67%"></i><i class="rc" style="width:33%"></i></div><div class="rede-v">9</div><div class="rede-dt">6 and. &middot; 3 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Curitiba</span></div><div class="rede-sp"><i class="ra" style="width:29%"></i><i class="rc" style="width:71%"></i></div><div class="rede-v">7</div><div class="rede-dt">2 and. &middot; 5 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">Programa de Reaquecimento</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">6</div><div class="rede-dt">6 and.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG Bras&#237;lia</span></div><div class="rede-sp"><i class="ra" style="width:20%"></i><i class="rc" style="width:80%"></i></div><div class="rede-v">5</div><div class="rede-dt">1 and. &middot; 4 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Recife</span></div><div class="rede-sp"><i class="ra" style="width:40%"></i><i class="rc" style="width:60%"></i></div><div class="rede-v">5</div><div class="rede-dt">2 and. &middot; 3 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Expans&#227;o</span></div><div class="rede-sp"><i class="ra" style="width:25%"></i><i class="rc" style="width:75%"></i></div><div class="rede-v">4</div><div class="rede-dt">1 and. &middot; 3 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Recife</span></div><div class="rede-sp"><i class="rc" style="width:100%"></i></div><div class="rede-v">4</div><div class="rede-dt">4 conc.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG Manaus</span></div><div class="rede-sp"><i class="ra" style="width:33%"></i><i class="rc" style="width:67%"></i></div><div class="rede-v">3</div><div class="rede-dt">1 and. &middot; 2 conc.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG Cuiab&#225;</span></div><div class="rede-sp"><i class="ra" style="width:50%"></i><i class="rc" style="width:50%"></i></div><div class="rede-v">2</div><div class="rede-dt">1 and. &middot; 1 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Jo&#227;o Pessoa</span></div><div class="rede-sp"><i class="ra" style="width:50%"></i><i class="rc" style="width:50%"></i></div><div class="rede-v">2</div><div class="rede-dt">1 and. &middot; 1 conc.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">AG S&#227;o Caetano do Sul</span></div><div class="rede-sp"><i class="ra" style="width:50%"></i><i class="rc" style="width:50%"></i></div><div class="rede-v">2</div><div class="rede-dt">1 and. &middot; 1 conc.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG Fortaleza</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">2</div><div class="rede-dt">2 and.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG Jo&#227;o Pessoa</span></div><div class="rede-sp"><i class="rc" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 conc.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">AG S&#227;o Caetano do Sul</span></div><div class="rede-sp"><i class="rc" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 conc.</div></div>
           <div class="rede-row"><div class="rede-nm"><span class="rn">AG Campinas</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Expans&#227;o Felipe</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn">Hunter SC - Paulo Sanches</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
-          <div class="rede-row"><div class="rede-nm"><span class="rn" title="Hunter SP - Vanessa Cotosck">Hunter SP - Vanessa C.</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn">Hunter SC &#183; Paulo Sanches</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
+          <div class="rede-row"><div class="rede-nm"><span class="rn" title="Hunter SP &#183; Vanessa Cotosck">Hunter SP &#183; Vanessa C.</span></div><div class="rede-sp"><i class="ra" style="width:100%"></i></div><div class="rede-v">1</div><div class="rede-dt">1 and.</div></div>
         </div>
-        <div class="rede-leg"><span><i style="background:#E8631A"></i>Em andamento</span><span><i style="background:#3DAE6B"></i>Conclu&iacute;do</span><span style="margin-left:auto;color:var(--gold);font-weight:600">21 redes &middot; 16 faturando</span></div>
+        <div class="rede-leg"><span><i style="background:#E8631A"></i>Em andamento</span><span><i style="background:#3DAE6B"></i>Conclu&iacute;do</span><span style="margin-left:auto;color:var(--gold);font-weight:600">19 redes &middot; 15 faturando</span></div>
       </div>
 
       <!-- TOP NOVAS PRODUÇÕES -->
@@ -291,7 +289,7 @@ header{border-bottom-color:rgba(42,33,29,.8)}
           <div class="tprow"><div class="tpnm"><b>ENL</b><span>Daniel P.</span></div><div class="tptrack"><div class="tpwrap" style="width:71%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 246 mil</div></div>
           <div class="tprow"><div class="tpnm"><b>HHI</b><span>Daniel C.</span></div><div class="tptrack"><div class="tpwrap" style="width:71%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 244 mil</div></div>
           <div class="tprow"><div class="tpnm"><b>SEW</b><span>Sergio E.</span></div><div class="tptrack"><div class="tpwrap" style="width:36%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 125 mil</div></div>
-          <div class="tprow"><div class="tpnm"><b>Gilberto N.</b><span>formado em 13/10</span></div><div class="tptrack"><div class="tpwrap" style="width:34%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 117 mil</div></div>
+          <div class="tprow"><div class="tpnm"><b>Gilberto N.</b><span>formado</span></div><div class="tptrack"><div class="tpwrap" style="width:34%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 117 mil</div></div>
           <div class="tprow"><div class="tpnm"><b>HAD</b><span>Fabricio M.</span></div><div class="tptrack"><div class="tpwrap" style="width:28%"><div class="tpnova" style="width:100%"></div></div></div><div class="tpv">R$ 95 mil</div></div>
         </div>
         <div class="tpsub"><b>Participa&ccedil;&atilde;o por rede (R$):</b> <span class="rd">AG BH 30%</span> &middot; <span class="rd">Expans&atilde;o 18%</span> &middot; <span class="rd">AG RJ 13%</span> &middot; <span class="rd">Salvador 7%</span><br><b>27 parceiros</b> com novas produ&ccedil;&otilde;es &middot; R$ 1,98 mi &middot; neg&oacute;cio criado AP&Oacute;S entrada na C1.</div>
@@ -299,7 +297,7 @@ header{border-bottom-color:rgba(42,33,29,.8)}
 
       <!-- TOP CONSOLIDADO -->
       <div class="panel">
-        <div class="pt">Top parceiros &middot; Consolidado <small>R$ 10,56 mi</small></div>
+        <div class="pt">Top parceiros &middot; Consolidado <small>R$ 10,55 mi</small></div>
         <div class="tp">
           <div class="tprow"><div class="tpnm"><b>WKF</b><span>Paulo C.</span></div><div class="tptrack"><div class="tpwrap" style="width:100%"><div class="tpnova" style="width:0%"></div><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 1,39 mi</div></div>
           <div class="tprow"><div class="tpnm"><b>OOR</b><span>Fabio A.</span></div><div class="tptrack"><div class="tpwrap" style="width:62%"><div class="tpnova" style="width:10%"></div><div class="tpcust" style="width:90%"></div></div></div><div class="tpv">R$ 856 mil</div></div>
@@ -310,16 +308,16 @@ header{border-bottom-color:rgba(42,33,29,.8)}
           <div class="tprow"><div class="tpnm"><b>WD</b><span>Walfredo D.</span></div><div class="tptrack"><div class="tpwrap" style="width:34%"><div class="tpnova" style="width:0%"></div><div class="tpcust" style="width:100%"></div></div></div><div class="tpv">R$ 472 mil</div></div>
         </div>
         <div class="tplegend"><span><i style="background:linear-gradient(90deg,#2E7D46,#5BD08A)"></i>Novas</span><span><i style="background:linear-gradient(90deg,#2980B9,#5DADE2)"></i>Herdado</span><span style="margin-left:auto;color:var(--muted);font-size:11px">Consolidado = Novas + Herdado</span></div>
-        <div class="tpfoot"><b>NFs por rede:</b> <span class="rd">Bras&iacute;lia 90</span> &middot; <span class="rd">AG BH 82</span> &middot; <span class="rd">AG RJ 56</span> &middot; <span class="rd">Expans&atilde;o 31</span> &middot; <span class="rd">Hunter SP 30</span></div>
+        <div class="tpfoot"><b>NFs por rede:</b> <span class="rd">Bras&iacute;lia 90</span> &middot; <span class="rd">AG BH 82</span> &middot; <span class="rd">AG RJ 56</span> &middot; <span class="rd">Expans&#227;o 33</span> &middot; <span class="rd">Hunter SP 30</span></div>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="foot">
-    <div class="fcard"><div class="fv" style="color:var(--green)">48,1%</div><div class="fll">Forma&ccedil;&atilde;o ajustada (50 formados &divide; 104 entradas com &ge;90d)</div></div>
-    <div class="fcard"><div class="fv">R$ 25,6 mil</div><div class="fll">Ticket m&eacute;dio por NF (R$ 10,56 mi &divide; 413)</div><div class="fsub">49 de 119 no escopo faturando &middot; <b>41%</b></div></div>
-    <div class="fcard"><div class="fv" style="color:var(--yellow)">19<span style="font-size:15px;color:#b3a49a"> prom</span> &middot; 21<span style="font-size:15px;color:#b3a49a"> rep</span></div><div class="fll">Passagem de classe 13/10</div><div class="fsub" style="line-height:1.4;font-size:11px;white-space:nowrap"><b>Promoveram:</b> C1&rarr;C2 <b>10</b> &middot; C2&rarr;C3 <b>6</b> &middot; +<b>3</b> grad<br><b>Repetiram:</b> C1 <b>13</b> &middot; C2 <b>3</b> &middot; C3 <b>5</b> &middot; +<b>10</b> desinc</div></div>
+    <div class="fcard"><div class="fv" style="color:var(--green)">55,8%</div><div class="fll">Forma&ccedil;&atilde;o ajustada (58 formados &divide; 104 entradas com &ge;90d)</div></div>
+    <div class="fcard"><div class="fv">R$ 25,6 mil</div><div class="fll">Ticket m&eacute;dio por NF (R$ 10,55 mi &divide; 412)</div><div class="fsub">48 de 109 no escopo faturando &middot; <b>44%</b></div></div>
+    <div class="fcard"><div class="fv" style="color:var(--yellow)">19<span style="font-size:15px;color:#b3a49a"> prom</span> &middot; 12<span style="font-size:15px;color:#b3a49a"> rep</span></div><div class="fll">Passagem de classe do m&ecirc;s</div><div class="fsub" style="line-height:1.4;font-size:11px;white-space:nowrap"><b>Promoveram:</b> C1&rarr;C2 <b>5</b> &middot; C2&rarr;C3 <b>6</b> &middot; +<b>8</b> grad<br><b>Repetiram:</b> C1 <b>5</b> &middot; C2 <b>5</b> &middot; C3 <b>2</b> &middot; +<b>10</b> desinc</div></div>
     <div class="fcard" style="border-left-color:var(--purple)"><div class="fv" style="color:var(--purple)">R$ 1,66 mi <span class="ftag">Faturamento Indireto</span></div><div class="fll">Consolidado indireto &middot; foto por classe: C1 R$ 132k &middot; C2 R$ 631k &middot; C3 R$ 899k</div><div class="fsub">10 parceiros &middot; 54 NFs &middot; +15,7% do Consolidado &middot; n&atilde;o soma</div></div>
     <div class="fcard"><div class="fv" style="color:var(--orange-l)">58 dias</div><div class="fll">Ciclo mediano (funil ativo) Cria&ccedil;&atilde;o &rarr; Autoriza&ccedil;&atilde;o <span style="opacity:.6;font-size:11px">&middot; n=586 &middot; medi&ccedil;&atilde;o 18/09</span></div><div class="fsub" style="display:grid;grid-template-columns:1fr 1fr;column-gap:18px;row-gap:1px;font-size:12.5px;line-height:1.3;margin-top:4px"><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">Cria&ccedil;&atilde;o&rarr;Reuni&atilde;o</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">9d</b></span><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">Reuni&atilde;o&rarr;Documenta&ccedil;&atilde;o</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">13d</b></span><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">Documenta&ccedil;&atilde;o&rarr;Triagem</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">4d</b></span><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">Triagem&rarr;RTI pronto</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">8d</b></span><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">RTI pronto&rarr;apres.</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">7d</b></span><span style="display:flex;justify-content:space-between;gap:8px"><span style="opacity:.85">Apres.&rarr;Autoriza&ccedil;&atilde;o</span><b style="color:var(--orange-l);font-variant-numeric:tabular-nums">15d</b></span></div></div>
   </div>
@@ -330,7 +328,7 @@ function fit(){var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
   document.getElementById('fit').style.zoom=s;}
 window.addEventListener('resize',fit);fit();
 var d=new Date();var m=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
-document.getElementById('dt').innerHTML='Posi&ccedil;&atilde;o &middot; <b>04/11/2026</b> (NF at&eacute; 31/10)';
+document.getElementById('dt').innerHTML='Posi&ccedil;&atilde;o &middot; <b>11/11/2026</b> (NF at&eacute; 31/10)';
 var _stage=document.querySelector('.stage');
 document.getElementById('blurToggle').addEventListener('click',function(){
   var hidden=_stage.classList.toggle('values-hidden');
